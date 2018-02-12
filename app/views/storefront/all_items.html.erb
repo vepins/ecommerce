@@ -1,0 +1,44 @@
+<h1>Welcome to the oh-so-official Tech Talent South Store</h1>
+<p>Give us your money!</p>
+
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="well text-center">
+        <p>
+          <%= image_tag product.image, style: "height: 250px; max-width: 100%" %>
+        </p>
+        <h3><%= link_to product.name, product %></h3>
+        <p>
+          <a href="#" data-toggle="modal" data-target="#myModal_<%= product.id %>">
+            <span class="glyphicon glyphicon-plus"></span> Quick Info
+          </a>
+        </p>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal_<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="<%= product.name %>" id="myModalLabel">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            <p><%= image_tag product.image, style: "height: 150px; max-width: 100%;" %></p>
+            <p>Made by: <%= product.brand %></p>
+            <p>Rating: <%= product.rating %></p>
+            <p>Category: <%= product.category.name %></p>
+            <p>Description: <%= product.description %></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end modal, has to be at end because it uses jQuery -->
+  <% end %>
+</div>
+
+<!-- Button trigger modal we moved to existing link/button -->
