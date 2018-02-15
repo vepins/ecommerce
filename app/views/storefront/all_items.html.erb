@@ -1,4 +1,9 @@
 <h1>Welcome to the oh-so-official Tech Talent South Store</h1>
-<p>Give us your money!</p>
+
+<% if current_user.nil? %>
+  <p>Give us your money!</p>
+<% else %>
+  <h4>See anything you like, <strong><%= current_user.name %></strong>?</h4>
+<% end %>
 
 <%= render 'products_loop' %>
