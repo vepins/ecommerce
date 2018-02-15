@@ -56,6 +56,13 @@ class CartController < ApplicationController
     end
   end
 
+  def cancel_checkout
+    order = Order.find(params[:order_id])
+    order.destroy
+
+    redirect_to root_path    
+  end
+
   def order_complete
     @order = Order.find(params[:order_id])
     @amount = (@order.grand_total.to_f.round(2) * 100).to_i

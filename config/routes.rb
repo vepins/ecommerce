@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   post 'order_complete' => 'cart#order_complete'
 
+  post 'cancel_checkout' => 'cart#cancel_checkout'
+
   get 'view_order' => 'cart#view_order'
 
   get 'checkout' => 'cart#checkout'
