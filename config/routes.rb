@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'order_history' => 'orders#order_history'
+
   post 'add_to_cart' => 'cart#add_to_cart'
 
   post 'delete_from_cart' => 'cart#delete_from_cart'
