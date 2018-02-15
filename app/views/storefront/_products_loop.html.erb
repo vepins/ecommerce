@@ -33,7 +33,7 @@
             <div style="display: inline-block">
               <%= form_tag add_to_cart_path, method: :post do %>
                 <%= hidden_field_tag :product_id, product.id %>
-                <%= number_field_tag :quantity, nil, placeholder: "How many?", class: "form-control", style: "width: 120px; display: inline-block;" %>
+                <%= number_field_tag :quantity, nil, placeholder: "How many?", class: "form-control", min: 1, style: "width: 120px; display: inline-block;" %>
                 <%= submit_tag "Add To Cart", class: "btn btn-primary" %>
               <% end %>
             </div>

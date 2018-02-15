@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
+  authorize_resource
   # GET /products
   # GET /products.json
   def index
@@ -20,7 +22,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-    @categories = Category.all 
+    @categories = Category.all
   end
 
   # POST /products

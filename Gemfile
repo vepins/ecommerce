@@ -7,12 +7,16 @@ end
 
 gem 'bootstrap-sass'
 gem 'better_errors'
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem 'devise'
 gem 'carrierwave'
 gem 'cancancan'
 gem 'hirb'
 gem 'awesome_print', require: "ap"
 gem 'jquery-rails'
+gem 'stripe'
+gem 'figaro'
+gem 'certified'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record

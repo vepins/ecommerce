@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   post 'delete_from_cart' => 'cart#delete_from_cart'
 
+  post 'order_complete' => 'cart#order_complete'
+
   get 'view_order' => 'cart#view_order'
 
   get 'checkout' => 'cart#checkout'
